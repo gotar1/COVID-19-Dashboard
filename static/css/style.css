@@ -1,0 +1,56 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: lightgray;
+  /* background-image: url("../../image/virus.png");
+  background-size: contain;
+  background-repeat: repeat; */
+}
+
+/* .container {
+  background-image: url("../../image/virus.png");
+  background-size: contain;
+  background-repeat: repeat;
+} */
+
+.jumbotron {
+  background-image: url(https://thumbs.gfycat.com/SpiffyFlusteredFlicker-small.gif);     
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 1150px 290px; 
+  color: black;
+	margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;  	
+  padding: -10px;
+  background-color: lightgray; 
+
+}
+
+p {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: blue
+  /* padding: 20px; */
+} 
+  
+h1 {
+  font-size: 20px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  margin-right: 0px ;
+  text-align: center;	
+}
+
+h5 {
+  font-weight: bold;
+  font-size: 13px;
+  margin-top: 0px; 
+  margin-bottom: 10px; 
+  text-align: left;
+  color: blue;
+  /* background: rgb(119, 117, 117);	 */
+}
+  

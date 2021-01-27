@@ -1,0 +1,71 @@
+.dropdown {
+    margin-top: 10px;
+    margin-left: 10px;
+    float: left;
+    font-size: 20px;
+    text-align: left;
+  }
+  
+  .dropdown-menu {
+  float: left; 
+  top: 43px; 
+  }
+  
+  .btn {
+  background-color: rgb(211, 211, 211);
+  color: black;
+  border-color: black;
+  font-size: 12px; 
+  text-align: center;
+  vertical-align: middle;
+  height: 20px;
+  line-height: 1px;
+  }
+  
+  .container {
+    margin-left: 90px;
+    margin-right: 60px;
+  }
+
+  .jumbotron {
+    background-image: url(https://thumbs.gfycat.com/SpiffyFlusteredFlicker-small.gif);     
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 1150px 275px;
+    color: blue; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;  	
+    padding: -10px;
+    background-color: lightgray; 
+  
+  }
+  
+  p1 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+      /* padding: 20px; */
+  } 
+  
+  p {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+      /* padding: 20px; */
+  } 
+  
+  h1 {
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    text-align: center;	
+  }
+  
+  h2 {
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    text-align: center;	
+  } 
