@@ -1,9 +1,9 @@
 # Project COVID-19
 -----------
 
+Explore the data click [Dashboard](https://covid-19-infection-dashboard.herokuapp.com/) to view charts.
 ![dashboard](./image/dashboard.png)
 
-Explore the data click [Dashboard](https://covid-19-infection-dashboard.herokuapp.com/) to view charts.
 ## Project Topic:
 The topic of this project is COVID-19 pandemic using updated pandemic data from CDC, click 
 [CDC](https://data.cdc.gov/Case-Surveillance/United-States-COVID-19-Cases-and-Deaths-by-State-o/9mfq-cb36) to view raw data.
