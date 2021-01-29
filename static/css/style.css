@@ -53,4 +53,17 @@ h5 {
   color: blue;
   /* background: rgb(119, 117, 117);	 */
 }
+
+footer {
+  font-size: 14px;
+  text-align: center;
+  font-weight: lighter;
+}
+.reachme {
+  text-align: center;
+  font-size: 16px;
+  border-style: solid;
+  border-width: 3px;
+  list-style-position: inside;
+}
   
