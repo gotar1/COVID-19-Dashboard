@@ -4,4 +4,5 @@ pandas
 numpy
 sqlalchemy
 flask_cors
-
+sqlalchemy.ext.automap
+sqlalchemy.orm
