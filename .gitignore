@@ -128,5 +128,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 **/covid_pass.py
+**/cdc_token.py
 **/.ipynb_checkpoints
 **/._pycache_

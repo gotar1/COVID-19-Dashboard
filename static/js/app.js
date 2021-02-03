@@ -85,12 +85,12 @@ function createPlots(State) {
     }).catch(err => console.log(err));
 };
 
-// build gauge chart to show recovery percentage for selcted State and Date
+// function to build gauge chart to show recovery percentage for selcted State and Date
 function buildGauge(gauge) {
 
     // extract the recovery percent from list
     let recovery = gauge.Recovery_percent;
-    console.log(recovery);
+    // console.log(recovery);
 
     // Enter the recovery between 0 and 180 for the gauge needle has a 180 degrees movement
     let level = parseFloat(recovery)*1.78;
@@ -200,12 +200,13 @@ function init() {
         let dataCopy2 = data;
         // console.log(dataCopy2);
 
-        let filteredData7 = dataCopy2.filter(item => item.State);
-        console.log(filteredData7);
+        // set filteredInitData
+        let filteredInitData = dataCopy2.filter(item => item.State);
+        // console.log(filteredData7);
 
         // append states in an empty list
         let states = [];
-        filteredData7.forEach(item => states.push(item.State));
+        filteredInitData.forEach(item => states.push(item.State));
 
         // select only unique state names
         let uniqueStates = states.filter((onlyUnique));
@@ -224,8 +225,8 @@ function init() {
         createPlots(uniqueStates[0]);
 
         // initialize the demographic info and gauge chart
-        createData(filteredData7[0]);
-        buildGauge(filteredData7[0]);
+        createData(filteredInitData[0]);
+        buildGauge(filteredInitData[0]);
     }).catch(err => console.log(err));
 };
 // execute intial function
@@ -297,7 +298,7 @@ function filterDemo() {
         // matches the filter values
         Object.entries(filters).forEach(([key, value]) => {
         filteredDemoData = filteredDemoData.filter(row => row[key] === value);
-        console.log(filteredDemoData)
+        // console.log(filteredDemoData)
         });
 
         // Finally, rebuild the demographic info and gauge using the filtered Data
