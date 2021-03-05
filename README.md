@@ -1,6 +1,8 @@
 # Project COVID-19
 -----------
 
+[https://covid-19-infection-dashboard.herokuapp.com/](https://covid-19-infection-dashboard.herokuapp.com/)
+
 Explore the data click [Dashboard](https://covid-19-infection-dashboard.herokuapp.com/) to view charts.
 ![dashboard](./image/dashboard.png)
 
@@ -21,7 +23,14 @@ bar chart to show average cases and death numbers. Line chart to show State curv
 numbers and death percent and a gauge chart for recovery percent. All stats are average numbers per month
 from start of pandemic till January 2021.
 
-Our analysis shows that, the death rate is going down despite increased new cases of infection. This could be attributed 
+## Conclusion
+**Our analysis shows that:**
+
+Death rate is going down despite increased new cases of infection. This could be attributed 
 to medical professionals getting used to the virus and may be developing new protocols on how to treat COVID-19 patients 
 and the effectiveness of different medications and medical procedures currently in use.
+
+All states failed to level the infection curve despite all measures taken. Even states with mandated shutdown and strict 
+mask and social distancing procedures failed to level their curve. We may need to develope new procedures to deal with this 
+virus and any similar future viral infections.
 
