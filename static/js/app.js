@@ -16,20 +16,20 @@ function createPlots(State) {
         covidData.forEach(item => states.push(item.State));
         // console.log(states);
 
-        // append average cases to an empty list
-        let averageCases = [];
-        covidData.forEach(item => averageCases.push(item.Average_cases));
-        // console.log(averageCases);
+        // append total cases to an empty list
+        let totalCases = [];
+        covidData.forEach(item => totalCases.push(item.Total_cases));
+        // console.log(totalCases);
 
         // append dates to an empty list
         let dates= [];
         covidData.forEach(item => dates.push(item.Date));
         // console.log(dates);
 
-        // append average deaths to an empty list
-        let averageDeaths = [];
-        covidData.forEach(item => averageDeaths.push(item.Average_death));
-        // console.log(averageDeaths);
+        // append total deaths to an empty list
+        let totalDeaths = [];
+        covidData.forEach(item => totalDeaths.push(item.Total_death));
+        // console.log(totalDeaths);
 
         // append death percentage to an empty list
         let deathPercent = [];
@@ -38,17 +38,17 @@ function createPlots(State) {
         
         // build horizontal bar chart to show monthly status
         let barTrace = {
-            x: averageCases.reverse(),
+            x: totalCases.reverse(),
             y: dates.reverse(),
             orientation: 'h',
             type: 'bar',
-            text: averageDeaths.reverse()
+            text: totalDeaths.reverse()
         };
 
         let dataTrace = [barTrace];
     
         let barLayout = {
-            title: "COVID-19 Average Cases And Deaths",
+            title: "COVID-19 Total Cases And Deaths",
             margin: {
                 l: 100,
                 r: 100,
@@ -59,14 +59,14 @@ function createPlots(State) {
     
         Plotly.newPlot('bar', dataTrace, barLayout); 
 
-        // build line chart to show trend of average cases and death percentage during time period
+        // build line chart to show trend of total cases and death percentage during time period
        let lineTrace = {
            x: dates,
-           y: averageCases,
+           y: totalCases,
            mode: "lines",
            marker: {
-               size:averageCases ,
-            //    color: averageDeaths
+               size:totalCases ,
+            //    color: totalDeaths
            },
            text: deathPercent.reverse()
        };
@@ -75,10 +75,10 @@ function createPlots(State) {
 
        let lineLayout = {
            xaxis: {title: "Dates"},
-           yaxis: {title: "Average Cases"},
+           yaxis: {title: "Total Cases"},
            height: 500,
            width: 900,
-           title: "State Covid-19 Curve 'Average Cases and Death Percent'"
+           title: "State Covid-19 Curve 'Total Cases and Death Percent'"
         };
 
        Plotly.newPlot('line', lineData, lineLayout);
