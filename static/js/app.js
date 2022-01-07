@@ -9,17 +9,17 @@ function createPlots(State) {
 
         // filter data by State and use the filter to extract need information to build charts
         let covidData = data.filter(item => item.State.toString() === State);
-        // console.log(covidData);
+        console.log(covidData);
 
         // create empy list and append states to it
         let states = [];
         covidData.forEach(item => states.push(item.State));
-        // console.log(states);
+        console.log(states);
 
         // append total cases to an empty list
         let totalCases = [];
         covidData.forEach(item => totalCases.push(item.Total_cases));
-        // console.log(totalCases);
+        console.log(totalCases);
 
         // append dates to an empty list
         let dates= [];
