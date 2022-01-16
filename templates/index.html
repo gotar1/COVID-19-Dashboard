@@ -39,7 +39,9 @@
             <div class="col-md-offset-1 col-md-10">
             <h2>Welcome to the COVID-19 Dashboard Project!</h2>
             <p1>Brought to you by Eltahir Gotar <a target="_blank" href="https://gotar1.github.io/">@gotar</a></p1><br><br>
-            <p2>The purpose of this project is building an interactive dashboard and map of COVID-19 pandemic using updated data from CDC. <a class="btn btn-primary btn-lg" href="https://data.cdc.gov/Case-Surveillance/United-States-COVID-19-Cases-and-Deaths-by-State-o/9mfq-cb36"target="_blank" role="button">Raw Data</a></p><br> 
+            <p2>The purpose of this project is building an interactive dashboard and map of COVID-19 pandemic using updated data from CDC. <a class="btn btn-primary btn-lg" href="https://data.cdc.gov/Case-Surveillance/United-States-COVID-19-Cases-and-Deaths-by-State-o/9mfq-cb36"target="_blank" role="button">Raw Infection Data</a>
+                <a class="btn btn-primary btn-lg" href="https://data.cdc.gov/Vaccinations/COVID-19-Vaccinations-in-the-United-States-Jurisdi/unsk-b7fc"target="_blank" role="button">Raw Vaccine Data</a>
+            </p><br> 
               COVID-19 is a new virus and as such there is not enough data to do an in depth analysis. However as the virus continues to spread
               at an alarming rate throughout the United States and the world, we can study the collected infection data and look for any trends
               and patterns about the rates of infection, death and recovery. And compare States numbers to figure out who is doing well and who is failing.</p><br>
@@ -47,8 +49,11 @@
             <p3>We built an interactive dashboard for all US States and territories. It shows total numbers of cases, total death and death
             percentage, total recovery and recovery percentage. We built horizontal bar chart to show total cases and death numbers. Line             
             chart to show State curves with total cases numbers and death percent and a gauge chart for recovery percent. Since CDC data is aggregated, 
-            we used moving average for our calculations, all stats are total numbers up to that point from the start of the pandemic.</p><br>
+            and they used moving average, we cleaned the data to show latest stats, so all numbers are the total up to that point from the start of the pandemic.</p><br>
            
+            <p5>We also built two maps to show total numbers for pandemics and vaccine stats for all states. You select dataset and hover over a State to see
+                total cases of COVID-19, total death and total recovered. For vaccine map you acan see total doses distributed and administered and percentage per 100k of population.</p><br>
+
             <p4>Our analysis shows that, the death rate is going down despite increased new cases of infection. This could be attributed to medical
             professionals getting used to the virus and may be developing new protocols on how to treat COVID-19 patients and the effectiveness
             of different medications and medical procedures currently in use. However, all States failed to level the infection curve despite all
@@ -58,7 +63,9 @@
             <p>NAVIGATION: Use the navigation button at the top/left to view the dashboard and map.</p>
             <p>IMPORTANT! All data used in this project were downloaded from CDC website, click 'Raw Data button above to learn more</p>
             <p><a class="btn btn-primary btn-lg" href="dashboard"role="button">View Dashboard</a>
-                <a class="btn btn-primary btn-lg" href="map"role="button">View Map</a></p>
+                <a class="btn btn-primary btn-lg" href="map"role="button">View Infection Map</a>
+                <a class="btn btn-primary btn-lg" href="vac"role="button">View Vaccine Map</a>
+            </p>
             </div>
         </div>
         
