@@ -8,7 +8,7 @@ Explore the data click [Dashboard](https://covid-19-infection-dashboard.herokuap
 
 ## Project Topic:
 The topic of this project is COVID-19 pandemic using updated pandemic data from CDC, click 
-[CDC](https://data.cdc.gov/Case-Surveillance/United-States-COVID-19-Cases-and-Deaths-by-State-o/9mfq-cb36) to view raw data.
+[CDC](https://data.cdc.gov/Case-Surveillance/United-States-COVID-19-Cases-and-Deaths-by-State-o/9mfq-cb36) to view raw data. Click [CDC-VAC](https://data.cdc.gov/Vaccinations/COVID-19-Vaccinations-in-the-United-States-Jurisdi/unsk-b7fc) to view vaccination data.
 
 ## Introduction:
 COVID-19 is a new virus and as such there is not enough data to do an in depth analysis. However as the virus continues 
@@ -17,11 +17,19 @@ look for any trends and patterns about the rates of infection, death and recover
 and who is failing.
 
 ## Analysis
-We build an interactive dashboard for all US States and territories. It shows monthly average numbers
+We built an interactive dashboard for all US States and territories. It shows monthly average numbers
 of cases, average death and death percentage, average recovery and recovery percentage. We built horizontal
 bar chart to show average cases and death numbers. Line chart to show State curves with average cases
 numbers and death percent and a gauge chart for recovery percent. All stats are average numbers per month
 from start of pandemic.
+
+We also built two maps:
+1- Infection map, showing total cases, death and recovery counts for the USA. You can hover over any State
+and see all stats for it.
+![Infection Map](./image/infection_map.png)
+
+2- Vaccine map, showing vaccine distribution and percentage of population vaccinated per 100k. 
+![Infection Map](./image/vaccine_map.png)
 
 ## Conclusion
 **Our analysis shows that:**
