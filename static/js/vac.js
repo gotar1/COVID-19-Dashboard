@@ -7,8 +7,8 @@ console.log("hello");
 
 // });
 
-let dropItems = ['Total Vaccine Doses Distibuted', 'Total People Vaccinated per 100k']
-let dataSet = {'Total Vaccine Doses Distibuted':'vac_dist', 'Total People Vaccinated per 100k':'vac_per_100k'}
+let dropItems = ['Total Vaccine Doses Distibuted', 'Vaccine Distributed per 100k', 'Total Vaccine Doses Administered', 'Vaccine Administered per 100k']
+let dataSet = {'Total Vaccine Doses Distibuted':'vac_dist', 'Vaccine Distributed per 100k':'vac_per_100k', 'Total Vaccine Doses Administered': 'vac_admin', 'Vaccine Administered per 100k': 'admin_per_100k'}
 
 // dropItems.forEach(dropDownMenu => {
 //     d3.select("#selDataset")
@@ -64,12 +64,16 @@ function buildMap(cat) {
     let mapElement = {'state_name':[],
                       'vac_dist':[],
                       'vac_per_100k':[],
+                      'vac_admin':[],
+                      'admin_per_100k':[]
                     //   'total_recovery':[]
     };
     data.forEach(item => {
       mapElement.state_name.push(item.State),
       mapElement.vac_dist.push(item.Distributed),
       mapElement.vac_per_100k.push(item.Dist_per_100k)
+      mapElement.vac_admin.push(item.Administered),
+      mapElement.admin_per_100k.push(item.Admin_per_100k)
     //   mapElement.total_death.push(item.Total_death)
     });
 

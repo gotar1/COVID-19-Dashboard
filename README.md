@@ -28,7 +28,8 @@ We also built two maps:
 and see all stats for it.
 ![Infection Map](./image/infection_map.png)
 
-2- Vaccine map, showing vaccine distribution and percentage of population vaccinated per 100k. 
+2- Vaccine map, showing vaccine distribution and percentage of distribution per 100k of population, doses administered and
+percentage of population vaccinated per 100k. 
 ![Infection Map](./image/vaccine_map.png)
 
 ## Conclusion

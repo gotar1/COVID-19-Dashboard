@@ -35,7 +35,7 @@ function buildMap(cat) {
 
   // Perform a GET request to the query URL
   d3.json(url, function(data) {
-    // console.log(data);
+    console.log(data);
 
     // Next two functions to return data for last month only.
 
