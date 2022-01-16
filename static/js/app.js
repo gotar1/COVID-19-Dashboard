@@ -219,7 +219,7 @@ function init() {
             .text(name)        
             .property("value")
     
-    });
+        });
         
         // call functions to build charts of selected State
         createPlots(uniqueStates[0]);

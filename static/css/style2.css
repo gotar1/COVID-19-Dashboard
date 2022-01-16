@@ -11,6 +11,12 @@
   top: 43px; 
 }
 
+.selDataset {
+  font-size: 20;
+  font-weight: bold;
+  color: black;
+}
+
 .btn {
   background-color: rgb(211, 211, 211);
   color: black;
@@ -78,7 +84,7 @@ p {
 } 
 
 h1 {
-  font-size: 20px;
+  font-size: 15px;
   margin-top: 0px;
   margin-bottom: 10px;
   text-align: center;	
@@ -89,6 +95,16 @@ h2 {
   margin-top: 0px;
   margin-bottom: 10px;
   text-align: center;	
+}
+
+h5 {
+  font-weight: bold;
+  font-size: 13px;
+  margin-top: 0px; 
+  margin-bottom: 10px; 
+  text-align: center;
+  color: blue;
+  /* background: rgb(119, 117, 117);	 */
 }
 
 footer {
