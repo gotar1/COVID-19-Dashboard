@@ -2,71 +2,48 @@
 let url="/api/v1.0/vaccine"
 console.log("hello");
 
-// d3.json(url2, function(dog) {
-//   console.log(dog);
-
-// });
-
+// create dropdown menu that changes map
+// create dropdown menu options and map options to variable names in data
 let dropItems = ['Total Vaccine Doses Distibuted', 'Vaccine Distributed per 100k', 'Total Vaccine Doses Administered', 'Vaccine Administered per 100k']
 let dataSet = {'Total Vaccine Doses Distibuted':'vac_dist', 'Vaccine Distributed per 100k':'vac_per_100k', 'Total Vaccine Doses Administered': 'vac_admin', 'Vaccine Administered per 100k': 'admin_per_100k'}
 
-// dropItems.forEach(dropDownMenu => {
-//     d3.select("#selDataset")
-//     // option is the html element
-//     .append("option")
-//     .text(dropDownMenu)
-//     .property("value")
-// });
+dropItems.forEach(dropDownMenu => {
+  d3.select("#selDataset")
+  // option is the html element
+    .append("option")
+    .text(dropDownMenu)
+    .property("value", dropDownMenu)
+});
+
+// specify inital selected variable in dropdown menu 
+let selectedObj = 'vac_dist'
+
 // listens for when there is a change to the selDataset, when there is a change then it runs function updateDisplay
-// d3.selectAll('#selDataset').on("change", handleSubmit); 
-// function handleSubmit() {
-//     // use this to prevent the page from refreshing... may or may not be necessary.
-//     // d3.event.preventDefault();
-//     // select the value from the dropdown.node().value
-//     selectedId = d3.select('#selDataset').node().value;
-//     let selectedObj = dataSet[selectedId] 
-//     console.log(selectedObj);
-//     // build map
-//     buildMap(selectedObj);
-// };
+d3.selectAll('#selDataset').on("change", handleSubmit); 
 
+// handler for user selections in dropdown
+function handleSubmit() {
+  // use this to prevent the page from refreshing... may or may not be necessary.
+  // d3.event.preventDefault();
+  // select the value from the dropdown.node().value
+  selectedId = d3.select('#selDataset').property('value');
+  let selectedObj = dataSet[selectedId] 
+  // console.log(selectedObj);
+  // build map
+  buildMap(selectedObj);
+};
+
+// code for map building
 function buildMap(cat) {
-
   // Perform a GET request to the query URL
   d3.json(url, function(data) {
     // console.log(data);
-
-    // Next two functions to return data for last month only.
-
-    //It will return dates diff in no. if months
-    // function monthDiff(d1, d2) {
-    //   let months;
-    //   months = (d2.getFullYear() - d1.getFullYear()) * 12;
-    //   months -= d1.getMonth() + 1;
-    //   months += d2.getMonth(); 
-    //   return months <= 0 ? 0 : months;
-    // };
-    // //It will gets the last month date
-    // function getLastMonth(){
-    //   let x = new Date();
-    //   x.setDate(1);
-    //   x.setMonth(x.getMonth()-1);
-    //   return x;
-    // };
-    // let prevMonthDate = getLastMonth();
-    // let lastMonthData = data.filter(function(v){
-    //   return monthDiff(new Date(v.Date),prevMonthDate) < 1;
-    // });
-
-    //This is the data for last one Month
-    // console.log(lastMonthData);
 
     let mapElement = {'state_name':[],
                       'vac_dist':[],
                       'vac_per_100k':[],
                       'vac_admin':[],
                       'admin_per_100k':[]
-                    //   'total_recovery':[]
     };
     data.forEach(item => {
       mapElement.state_name.push(item.State),
@@ -74,13 +51,12 @@ function buildMap(cat) {
       mapElement.vac_per_100k.push(item.Dist_per_100k)
       mapElement.vac_admin.push(item.Administered),
       mapElement.admin_per_100k.push(item.Admin_per_100k)
-    //   mapElement.total_death.push(item.Total_death)
     });
 
     // let hoverText = mapElement['total_death'];
     // console.log(hoverText);
     // console.log(mapElement['state_name']);
-    // console.log(mapElement[cat]);
+    // console.log(cat);
 
     let mapData = [{
       type: "choropleth",
@@ -91,7 +67,7 @@ function buildMap(cat) {
       color: mapElement['vac_dist'],
       text: mapElement['state_name'],
       // mode: 'text',
-      // hoverinfo: "z",
+      // hoverinfo: z,
       marker: {
           size: 50,
           line: {
@@ -137,35 +113,7 @@ function optionChanged(cat) {
   buildMap(cat);
 }
 
-function handleSubmit() {
-    // use this to prevent the page from refreshing... may or may not be necessary.
-    // d3.event.preventDefault();
-    // select the value from the dropdown.node().value
-    selectedId = d3.select('#selDataset').node().value;
-    let selectedObj = dataSet[selectedId] 
-    // console.log(selectedObj);
-    // build map
-    buildMap(selectedObj)[0];
-};
-
-d3.selectAll('#selDataset').on("change", handleSubmit); 
-
-function init() {
-  let dataButton = d3.select("#selDataset");
-
-  dropItems.forEach(dropDownMenu => {
-    // option is the html element
-    dataButton.append("option")
-      .text(dropDownMenu)
-      .property("value")
-  });
-
-  buildMap(dropItems)
-};
-
-init();
-
-buildMap();
+buildMap(selectedObj);
 
 
 

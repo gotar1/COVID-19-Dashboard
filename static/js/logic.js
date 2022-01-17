@@ -1,41 +1,45 @@
 // Store our API endpoint inside queryUrl
 let url="/api/v1.0/monthly"
-let url2="/api/v1.0/vaccine"
 console.log("hello");
 
-d3.json(url2, function(dog) {
-  console.log(dog);
-
-});
-
+// create dropdown menu that changes map
+// create dropdown menu options and map options to variable names in data
 let dropItems = ['Total Cases Count', 'Total Death Count', 'Total Recovery Count']
 let dataSet = {'Total Cases Count':'total_cases', 'Total Death Count':'total_death', 'Total Recovery Count':'total_recovery'}
 
-// dropItems.forEach(dropDownMenu => {
-//     d3.select("#selDataset")
-//     // option is the html element
-//     .append("option")
-//     .text(dropDownMenu)
-//     .property("value")
-// });
-// listens for when there is a change to the selDataset, when there is a change then it runs function updateDisplay
-// d3.selectAll('#selDataset').on("change", handleSubmit); 
-// function handleSubmit() {
-//     // use this to prevent the page from refreshing... may or may not be necessary.
-//     // d3.event.preventDefault();
-//     // select the value from the dropdown.node().value
-//     selectedId = d3.select('#selDataset').node().value;
-//     let selectedObj = dataSet[selectedId] 
-//     console.log(selectedObj);
-//     // build map
-//     buildMap(selectedObj);
-// };
+dropItems.forEach(dropDownMenu => {
+    d3.select("#selDataset")
+    // option is the html element
+    .append("option")
+    .text(dropDownMenu)
+    .property("value", dropDownMenu)
+});
 
+// specify inital selected variable in dropdown menu 
+let selectedObj = 'total_cases'
+
+// listens for when there is a change to the selDataset, 
+// when there is a change then it runs function updateDisplay
+d3.selectAll('#selDataset').on("change", handleSubmit); 
+
+// handler for user selections in dropdown
+function handleSubmit() {
+    // use this to prevent the page from refreshing... may or may not be necessary.
+    // d3.event.preventDefault();
+    // select the value from the dropdown
+    selectedId = d3.select('#selDataset').node().value;
+    let selectedObj = dataSet[selectedId] 
+    // console.log(selectedObj);
+    // build map
+    buildMap(selectedObj);
+};
+
+// code for map building
 function buildMap(cat) {
 
   // Perform a GET request to the query URL
   d3.json(url, function(data) {
-    console.log(data);
+    // console.log(data);
 
     // Next two functions to return data for last month only.
 
@@ -47,6 +51,7 @@ function buildMap(cat) {
       months += d2.getMonth(); 
       return months <= 0 ? 0 : months;
     };
+
     //It will gets the last month date
     function getLastMonth(){
       let x = new Date();
@@ -58,8 +63,6 @@ function buildMap(cat) {
     let lastMonthData = data.filter(function(v){
       return monthDiff(new Date(v.Date),prevMonthDate) < 1;
     });
-
-    //This is the data for last one Month
     // console.log(lastMonthData);
 
     let mapElement = {'state_name':[],
@@ -134,35 +137,7 @@ function optionChanged(cat) {
   buildMap(cat);
 }
 
-function handleSubmit() {
-    // use this to prevent the page from refreshing... may or may not be necessary.
-    // d3.event.preventDefault();
-    // select the value from the dropdown.node().value
-    selectedId = d3.select('#selDataset').node().value;
-    let selectedObj = dataSet[selectedId] 
-    // console.log(selectedObj);
-    // build map
-    buildMap(selectedObj)[0];
-};
-
-d3.selectAll('#selDataset').on("change", handleSubmit); 
-
-function init() {
-  let dataButton = d3.select("#selDataset");
-
-  dropItems.forEach(dropDownMenu => {
-    // option is the html element
-    dataButton.append("option")
-      .text(dropDownMenu)
-      .property("value")
-  });
-
-  buildMap(dropItems)
-};
-
-init();
-
-buildMap();
+buildMap(selectedObj);
 
 
 
