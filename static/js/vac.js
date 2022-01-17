@@ -69,11 +69,11 @@ function buildMap(cat) {
       // mode: 'text',
       // hoverinfo: z,
       marker: {
-          size: 50,
-          line: {
-              color: "rgb(8,8,8)",
-              width: 1
-          },
+        size: 50,
+        line: {
+          color: "rgb(8,8,8)",
+          width: 1
+        },
       }
     }];
 
@@ -81,12 +81,11 @@ function buildMap(cat) {
       title: "USA COVID-19 Vaccine Distribution Map",
       showlegend: false,
       height: 600,
-            width: 980,
+      width: 980,
       geo: {
         scope: "usa",
         projection: {
-          type: "albersUsaTerritories"
-          // "albers usa"
+          type: "AlbersUsaTerritories"
         },
         showland: true,
         landcolor: "rgb(217, 217, 217)",
