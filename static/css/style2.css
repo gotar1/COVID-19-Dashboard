@@ -2,13 +2,18 @@
   margin-top: 10px;
   margin-left: 10px;
   float: left;
-  font-size: 20px;
+  font-size: 25px;
   text-align: left;
+  font-weight: bolder;
+  color: blue;  
+  /* background-color: blue; */ 
 }
   
 .dropdown-menu {
   float: left; 
-  top: 43px; 
+  top: 43px;
+  font-weight: bolder;
+  color: blue;
 }
 
 .selDataset {

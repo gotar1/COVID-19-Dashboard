@@ -15,6 +15,19 @@ dropItems.forEach(dropDownMenu => {
     .property("value", dropDownMenu)
 });
 
+// .on('mouseover', function(d) {
+//   div.style('display', 'inline');
+// })
+// .on('mousemove', function(d) {
+//   div.html(d.State + '<br>' + 'Doses Distibuted: ' + d.Distributed +
+//   '<br>' + 'Doses Distributed per 100k: ' + d.Dist_per_100k)
+//   .style('left', (d3.event.pageX - (parseInt(div.style('width'), 10) / 2)) + 'px')
+//   .style('top', (d3.event.pageY - parseInt(div.style('height'), 10) - 10) + 'px');
+// })
+// .on('mouseout', function(d) {
+//   div.style('display', 'none');
+// });
+
 // specify inital selected variable in dropdown menu 
 let selectedObj = 'vac_dist'
 
@@ -53,10 +66,12 @@ function buildMap(cat) {
       mapElement.admin_per_100k.push(item.Admin_per_100k)
     });
 
-    // let hoverText = mapElement['total_death'];
+    // let hoverText = 'State: ' + mapElement['state_name'] + '<br>' + 'Doses Distibuted: ' + mapElement.cat +
+    //   '<br>' + 'Doses Distributed per 100k: ' + mapElement.cat + '<br>' + 'Doses Administered: ' + 
+    //   mapElement.cat + '<br>' + 'Doses Administered per 100k: ' + mapElement.cat;
     // console.log(hoverText);
-    // console.log(mapElement['state_name']);
     // console.log(cat);
+    console.log(cat);
 
     let mapData = [{
       type: "choropleth",
@@ -66,8 +81,9 @@ function buildMap(cat) {
       z: mapElement[cat],
       color: mapElement['vac_dist'],
       text: mapElement['state_name'],
+      // text: hoverText,
       // mode: 'text',
-      // hoverinfo: z,
+      // hoverinfo: hoverText,
       marker: {
         size: 50,
         line: {

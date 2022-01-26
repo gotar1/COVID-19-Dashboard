@@ -14,10 +14,10 @@ Base = automap_base()
 Base.prepare(engine, reflect=True)
 
 # re-define our tables to python and save them...
-States = Base.classes.states
+# States = Base.classes.states
 Monthly = Base.classes.monthly
 Vaccine = Base.classes.vaccine
-World = Base.classes.world
+# World = Base.classes.world
 
 ## Flask Setup
 app = Flask(__name__)
@@ -45,21 +45,21 @@ def route():
     """List all available routes"""
     return (
         f"Available Routes: <br/>"
-        f"/api/v1.0/states<br/>"
+        # f"/api/v1.0/states<br/>"
         f"/api/v1.0/monthly<br/>"
         f"/api/v1.0/vaccine<br/>"
-        f"/api/v1.0/world<br/>"
+        # f"/api/v1.0/world<br/>"
     )
 
 # create a route for states table..
-@app.route('/api/v1.0/states')
-def states():
-    # create session querry data and return a JSON file
-    session = Session(engine)
-    conn = engine.connect()
-    df = pd.read_sql("SELECT * FROM states", conn)
-    session.close()
-    return df.to_json(orient="records")
+# @app.route('/api/v1.0/states')
+# def states():
+#     # create session querry data and return a JSON file
+#     session = Session(engine)
+#     conn = engine.connect()
+#     df = pd.read_sql("SELECT * FROM states", conn)
+#     session.close()
+#     return df.to_json(orient="records")
 
 # create a route for monthly table..
 @app.route('/api/v1.0/monthly')
@@ -82,14 +82,14 @@ def vaccine():
     return df.to_json(orient="records")
 
 # create a route for world table..
-@app.route('/api/v1.0/world')
-def world():
-    # create session querry data and return a JSON file
-    session = Session(engine)
-    conn = engine.connect()
-    df = pd.read_sql("SELECT * FROM world", conn)
-    session.close()
-    return df.to_json(orient="records")
+# @app.route('/api/v1.0/world')
+# def world():
+#     # create session querry data and return a JSON file
+#     session = Session(engine)
+#     conn = engine.connect()
+#     df = pd.read_sql("SELECT * FROM world", conn)
+#     session.close()
+#     return df.to_json(orient="records")
 
 if __name__ == '__main__':
     app.run(debug=True)
