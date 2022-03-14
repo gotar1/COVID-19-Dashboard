@@ -47,6 +47,7 @@ def route():
         f"Available Routes: <br/>"
         # f"/api/v1.0/states<br/>"
         f"/api/v1.0/monthly<br/>"
+        f"/api/v1.0/infection<br/>"
         f"/api/v1.0/vaccine<br/>"
         # f"/api/v1.0/world<br/>"
     )
@@ -68,6 +69,16 @@ def monthly():
     session = Session(engine)
     conn = engine.connect()
     df = pd.read_sql("SELECT * FROM monthly", conn)
+    session.close()
+    return df.to_json(orient="records")
+
+# create a route for infection table..
+@app.route('/api/v1.0/infection')
+def infection():
+    # create session querry data and return a JSON file
+    session = Session(engine)
+    conn = engine.connect()
+    df = pd.read_sql("SELECT * FROM infection", conn)
     session.close()
     return df.to_json(orient="records")
 

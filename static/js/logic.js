@@ -1,5 +1,5 @@
 // Store our API endpoint inside queryUrl
-let url="/api/v1.0/monthly"
+let url="/api/v1.0/infection"
 console.log("hello");
 
 // create dropdown menu that changes map
@@ -44,25 +44,25 @@ function buildMap(cat) {
     // Next two functions to return data for last month only.
 
     //It will return dates diff in no. if months
-    function monthDiff(d1, d2) {
-      let months;
-      months = (d2.getFullYear() - d1.getFullYear()) * 12;
-      months -= d1.getMonth() + 1;
-      months += d2.getMonth(); 
-      return months <= 0 ? 0 : months;
-    };
+    // function monthDiff(d1, d2) {
+    //   let months;
+    //   months = (d2.getFullYear() - d1.getFullYear()) * 12;
+    //   months -= d1.getMonth() + 1;
+    //   months += d2.getMonth(); 
+    //   return months <= 0 ? 0 : months;
+    // };
 
-    //It will gets the last month date
-    function getLastMonth(){
-      let x = new Date();
-      x.setDate(1);
-      x.setMonth(x.getMonth()-1);
-      return x;
-    };
-    let prevMonthDate = getLastMonth();
-    let lastMonthData = data.filter(function(v){
-      return monthDiff(new Date(v.Date),prevMonthDate) < 1;
-    });
+    // //It will gets the last month date
+    // function getLastMonth(){
+    //   let x = new Date();
+    //   x.setDate(1);
+    //   x.setMonth(x.getMonth()-1);
+    //   return x;
+    // };
+    // let prevMonthDate = getLastMonth();
+    // let lastMonthData = data.filter(function(v){
+    //   return monthDiff(new Date(v.Date),prevMonthDate) < 1;
+    // });
     // console.log(lastMonthData);
 
     let mapElement = {'state_name':[],
@@ -70,7 +70,7 @@ function buildMap(cat) {
                       'total_death':[],
                       'total_recovery':[]
     };
-    lastMonthData.forEach(item => {
+    data.forEach(item => {
       mapElement.state_name.push(item.State),
       mapElement.total_recovery.push(item.Total_recovered),
       mapElement.total_cases.push(item.Total_cases),
