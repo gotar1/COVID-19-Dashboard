@@ -26,7 +26,7 @@ app.config['DEBUG'] = True
 ## flask routes to render HTML templates
 @app.route("/")
 def home():
-    return render_template("index.html") 
+    return render_template ("index.html") 
 
 @app.route("/dashboard")
 def dashboard():
